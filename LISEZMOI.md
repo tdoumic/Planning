@@ -56,16 +56,22 @@ Un navigateur peut refuser de lire directement un agenda Google depuis une autre
 1. Va sur [script.google.com](https://script.google.com) et clique sur **Nouveau projet**.
 2. Efface le contenu affiché, puis copie-colle **tout** le contenu du fichier `script-google-agenda.gs` de ce dépôt. Tu n'as rien à modifier.
 3. Donne un nom au projet (par exemple « Ma journée – agenda ») et clique sur **Enregistrer**.
-4. Clique sur **Déployer**, puis **Nouveau déploiement**. Choisis le type **Application Web**, puis :
+4. **Active le service avancé** pour que le script soit rapide :
+   - dans le menu de gauche, à côté de **Services**, clique sur **+** ;
+   - choisis **Google Calendar API**, puis clique sur **Ajouter**.
+
+   Sans ce service, le script fonctionne mais peut mettre plus d'une minute à répondre, et la page abandonne avant.
+5. *(Facultatif)* Pour vérifier la vitesse : dans la barre au-dessus du code, choisis la fonction **test**, puis clique sur **Exécuter**. Le journal affiche par exemple « Méthode : api — 150 événements lus en 3.1 s ».
+6. Clique sur **Déployer**, puis **Nouveau déploiement**. Choisis le type **Application Web**, puis :
    - **Exécuter en tant que** : **Moi** ;
    - **Qui a accès** : **Tout le monde**.
-5. Clique sur **Déployer**. Google te demande d'autoriser l'accès à ton agenda.
+7. Clique sur **Déployer**. Google te demande d'autoriser l'accès à ton agenda.
    - Il peut afficher un avertissement du type « Google n'a pas validé cette application ». C'est normal : c'est **ton propre script**. Clique sur **Paramètres avancés**, puis sur **Accéder à … (non sécurisé)**, puis sur **Autoriser**.
-6. Copie l'**URL de l'application Web**. Elle commence par `https://script.google.com/macros/s/` et se termine par `/exec`.
-7. Dans la page « Ma journée », ouvre les **réglages ⚙️** :
+8. Copie l'**URL de l'application Web**. Elle commence par `https://script.google.com/macros/s/` et se termine par `/exec`.
+9. Dans la page « Ma journée », ouvre les **réglages ⚙️** :
    - section **Agendas Google**, méthode **Script Google (recommandé)** ;
    - colle l'adresse et clique sur **Ajouter l'agenda**.
-8. La page affiche la liste de tes agendas. Pour chacun, choisis ce qu'il contient :
+10. La page affiche la liste de tes agendas. Pour chacun, choisis ce qu'il contient :
    - **Rendez-vous** : tes agendas habituels (principal, famille…) ;
    - **Sport** : l'agenda de ta salle, par exemple pour le CrossFit ;
    - **Routines** : l'agenda rempli chaque matin avec tes blocs de la journée (habitudes, séance de sport proposée, repas, tâches à heure fixe) ;
@@ -73,7 +79,7 @@ Un navigateur peut refuser de lire directement un agenda Google depuis une autre
 
 Les libellés de Google peuvent varier un peu selon la langue et la version.
 
-**Si tu modifies le script plus tard**, il faut le redéployer : **Déployer**, puis **Gérer les déploiements**.
+**Si tu modifies le script plus tard**, il faut publier une nouvelle version : **Déployer**, puis **Gérer les déploiements**, puis le crayon ✏️, **Version : Nouvelle version**, puis **Déployer**. L'adresse `/exec` reste normalement la même.
 
 ### Autre méthode : l'adresse secrète iCal
 
